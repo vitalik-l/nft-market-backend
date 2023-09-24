@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chains",
+  "info": {
+    "singularName": "chain",
+    "pluralName": "chains",
+    "displayName": "Chain",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "scannerUrl": {
+      "type": "string",
+      "required": true
+    },
+    "chainId": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "config": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chain-config.chain-config",
+      "mappedBy": "chain"
+    }
+  }
+}
