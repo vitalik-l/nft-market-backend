@@ -1,6 +1,7 @@
 # Creating multi-stage build for production
 FROM node:18-alpine as build
 RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git > /dev/null 2>&1
+ARG STRAPI_ADMIN_BACKEND_URL
 ENV NODE_ENV=production
 
 WORKDIR /opt/
