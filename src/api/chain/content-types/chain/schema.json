@@ -26,10 +26,6 @@
       "unique": true,
       "required": true
     },
-    "enabled": {
-      "type": "boolean",
-      "default": false
-    },
     "config": {
       "type": "relation",
       "relation": "oneToOne",
